@@ -1,0 +1,25 @@
+- There are 3 important steps in pointer:
+    - Step 1: Declaring pointer `int *ptr`
+    - Step 2: Initializating pointer `ptr = &x`
+    - Step 3: Dereferencing pointer `*ptr`
+- WHY having pointer?
+    - To access various part of computer system.
+    - That’s why we use C or C++
+    - To access `heap` memory
+
+### `HEAP MEMORY ALLOCATION` (decided at run time not compile time)
+
+*** Creating a dynamic memory ***
+- The heap memory will grow larger and larger at the run time. 
+
+### `Problem using Pointers`
+
+1. Uninitialized Ptr
+2. Memory Leak (int *ptr)
+3. Dangling pointer
+
+### `REFERENCE`
+
+- `int x = 10`
+- `int &y = x`
+- `y` will be `x`
