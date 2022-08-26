@@ -35,8 +35,8 @@ int Rectangle::perimeter()
 {
     return 2 * (length + width);
 }
-Rectangle::~Rectangle(){
-
+Rectangle::~Rectangle()
+{
 }
 int main()
 {
@@ -44,11 +44,16 @@ int main()
     // rec1.initialize(10, 5);
     cout << "Area: " << rec1.area() << endl;
     rec1.setLength(30);
-    cout << "------------------" <<endl;
+    cout << "------------------" << endl;
     Rectangle rect2(30, 10);
-    cout<<rect2.area()<<endl;
-    cout<< rect2.perimeter() <<endl;
+    cout << rect2.area() << endl;
+    cout << rect2.perimeter() << endl;
     rect2.setLength(100);
-    cout << rect2.getLength() <<endl;
+    cout << rect2.getLength() << endl;
+    cout << "-------Pointer to an Object in HEAP-----------" << endl;
+    Rectangle *ptr = new Rectangle();
+    ptr->setLength(10);
+    cout << ptr->area();
+
     return 0;
 }
