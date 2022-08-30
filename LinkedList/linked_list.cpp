@@ -12,12 +12,15 @@ struct Node
 // Display Linked List
 void display(struct Node *ptr)
 {
+    int index = 0;
     while (ptr != NULL)
     {
-        cout << "Data: " << ptr->data << endl;
+        cout << "Index " << index << ": " << ptr->data << endl;
         ptr = ptr->next;
+        index++;
     }
 }
+// Create linked list based on the given array
 void create_linked_list(int A[], int size)
 {
     int i;
@@ -36,6 +39,19 @@ void create_linked_list(int A[], int size)
         last = ptr;
     }
 }
+
+void linked_list(int arr[], int SIZE)
+{
+    int index;
+    struct Node *last_node, *ptr;
+
+    // Every new node is created
+    first = new Node;
+    first->data = arr[0];
+    first->next = NULL;
+    last_node = first;
+}
+// Count the number of nodes
 int count_node(struct Node *ptr)
 {
     int count = 0;
@@ -46,6 +62,7 @@ int count_node(struct Node *ptr)
     }
     return count;
 }
+// Sum of all nodes
 int sum_node(struct Node *ptr)
 {
     int sum = 0;
@@ -56,13 +73,60 @@ int sum_node(struct Node *ptr)
     }
     return sum;
 }
+// Max value of nodes in the linked list
+int max_node(struct Node *ptr)
+{
+    int max = ptr->data;
+    while (ptr != NULL)
+    {
+        if (max < ptr->data)
+        {
+            max = ptr->data;
+        }
+        ptr = ptr->next;
+    }
+    return max;
+}
+// Min value of nodes in the linked list
+int min_node(struct Node *ptr)
+{
+    int min = ptr->data;
+    while (ptr)
+    {
+        if (min > ptr->data)
+        {
+            min = ptr->data;
+        }
+        ptr = ptr->next;
+    }
+    return min;
+}
+int linear_search(struct Node *ptr, int key)
+{
+    int index = 0;
+    while (ptr != NULL)
+    {
+        if (key == ptr->data)
+        {
+            return index;
+        }
+        ptr = ptr->next;
+        index++;
+    }
+    return 0;
+}
 int main()
 {
-    int arr[5] = {1, 2, 3, 4, 5};
+    int arr[5] = {100, 50, 20, 2000, 10};
     create_linked_list(arr, 5);
     display(first);
     cout << "Number of Nodes: " << count_node(first) << endl;
     cout << "Sum: " << sum_node(first) << endl;
+    cout << "Max: " << max_node(first) << endl;
+    cout << "Min : " << min_node(first) << endl;
+    int key = 10;
+    cout << "Linear Search Key " << key << ": "
+         << "at Index " << linear_search(first, key) << endl;
     /*
         Node *node_1 = NULL;
         Node *node_2 = NULL;
