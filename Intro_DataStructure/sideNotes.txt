@@ -1,0 +1,26 @@
+* Abstract Data Type *
+Example:
+Given a list of numbers (9, 3, 1, 2, 3, 5)
+
+Data: 
+    1. Space for storing elements
+    2. Capacity
+    3. Size 
+Operation:
+    1. Add()
+    2. Remove()
+    3. Search(Key)
+
+
+* Physical Data Structure and Logical Data Structure *
+
+1. Physical DS:
+    + Array (created in either Stack or HEAP)
+    + Linked List (created in HEAP)
+
+2. Logical DS:
+    + Stack (Linear) Last In First Out
+    + Queue (Linear) First In First Out
+    + Trees (non_Linear)
+    + Graph (Non_Linear)
+    + Hash Table (Tabular)
