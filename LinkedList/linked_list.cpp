@@ -46,13 +46,23 @@ int count_node(struct Node *ptr)
     }
     return count;
 }
+int sum_node(struct Node *ptr)
+{
+    int sum = 0;
+    while (ptr != NULL)
+    {
+        sum += ptr->data;
+        ptr = ptr->next;
+    }
+    return sum;
+}
 int main()
 {
     int arr[5] = {1, 2, 3, 4, 5};
     create_linked_list(arr, 5);
     display(first);
-    cout << count_node(first) << endl;
-
+    cout << "Number of Nodes: " << count_node(first) << endl;
+    cout << "Sum: " << sum_node(first) << endl;
     /*
         Node *node_1 = NULL;
         Node *node_2 = NULL;
