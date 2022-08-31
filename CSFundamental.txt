@@ -1,3 +1,23 @@
 I. Low Level (Machine language, Assembly Language) and High Level (Python, C++, Java...)
 II. Operating Systems
+III. Object-Oriented Programming
+     + Classes
+     + Basic inheritance
+     + Polymorphism:
+       - 
+     + Dynamic Memory Allocation
+     + Templates
+     + Data Structures: Linked List, Stacks, Queues, Deques, Trees, and Heaps.
+     + Randomized DS
+     + Standard sorting and searching algorithms.
+     + Graphs
+     + Hash Tables
 
+IV. Learning Outcomes
+    + Design and Implement algorithms in pseudocode and C++
+    + Analyze the run time of algo and estimate their memory usages
+    + Design and implement standard DS including linked lists, stacks, queues, trees, and heaps.
+    + Design and Implement sorting algorithm: Quick Sort, Merge Sort, and Heap Sort
+    + Design and Write complex computer programs in C++
+
+     

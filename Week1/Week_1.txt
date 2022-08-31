@@ -1,0 +1,61 @@
+Week 1 Aug 30:
+
+#TODO:
+	1. Review learning outcomes.
+	2. Virtual IDE
+	3. Read part 1, 2, 3, 4 on isocpp.org/tour
+
+
+*** QuickSort (Divide and Conquer Algo) ***
+
+
+
+*** Algorithms ***
+
+1. Definition:
+   + A set of procedures to complete a task
+2. Working definition:
+   + Steps should be clear and a set of computation instructions.
+3. Greatest Common Divisor (GCD) by replacing the larger of 2 numbers with their positive difference.
+   + Example: GCD(15, 25) = 5
+   => 15: 1, 3, 5, 15
+   => 25: 1, 5, 25
+      - Greatest Common: 5
+   + Example 2: GCD(286, 1001)
+   => 286: 1, 2, 11, 13 ...
+   => 1001: 1, 2, ....
+   * Procedures: 
+   Step 1: if a = b, then gcd is a.
+   Step 2: Replace the larger of a, b with their positive difference.
+   Step 3: Goto Step 1
+
+   * Note:
+   - The sequence X_1, X_2, X_3 is decreasing. Why? Step 2 reduces the larger number every time.
+
+   ==> Conclusion: All algorithms are terminated under a certain condition.
+
+   - Compare common divisors of (a, b) to common divisors of (a-b, b)
+   - Suppose `d` divides a and b
+     + a = d*b
+     + b = d * a
+   - Suppose the difference be `s`
+     + s = a - b = d*a_1 - d*b_1 = d*(a_1 - b_1)
+     + So, d is also a divisor s = a - b
+   - So, we have shown
+     + If `d` divides both a and b
+     + Then, it also divides s = a - b.
+     + Conversely, if `d` divides s = a - b, b then `d` divides a and b.
+     + s = d*a_2, b = d*b_2,
+     ...
+     + So, the common divisors of a, b are exactly the same as the divisors of (a-b) and b.
+
+Steps:
+	1. Has input (pre-condition) and output (post-condition or results)
+	2. is finite (which is terminated)
+	3. Has steps which are precisely stated and be computed by the performer
+	4. Output should be intended correctly.
+
+
+*** Reading Homework 1 ***
+
+1. 

@@ -1,0 +1,25 @@
+Week 1 Aug 30:
+
+#TODO:
+	1. Review learning outcomes.
+	2. Virtual IDE
+
+
+
+*** QuickSort (Divide and Conquer Algo) ***
+
+
+
+*** Algorithms ***
+
+1. Definition:
+   + A set of precedures to complete a task
+2. Working definition:
+   + Steps should be clear and a set of computation instructions.
+3. Greatest Common Divisor (GCD)
+   + Example: GCD(15, 25) = 5
+   => 15: 1, 3, 5, 15
+   => 25: 1, 5, 25
+      - Greatest Common: 5
+   + Example 2: GCD(286, 1001)
+   => 
