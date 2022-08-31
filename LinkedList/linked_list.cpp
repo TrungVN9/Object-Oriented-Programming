@@ -100,6 +100,7 @@ int min_node(struct Node *ptr)
     }
     return min;
 }
+// Linear Search for key returning the associated index
 int linear_search(struct Node *ptr, int key)
 {
     int index = 0;
@@ -114,6 +115,53 @@ int linear_search(struct Node *ptr, int key)
     }
     return 0;
 }
+
+/* Insert Nodes 
+ 1. Insert a node before first node (constant time)
+    + Create a new node
+    + Initialize the new node
+    + Make it become first node by pointing to the first.
+    + Make it to become first
+    -----
+    Node *inserted_node = new Node;
+    inserted_node-> data = x;
+    inserted_node->next = first;
+    first = inserted_node;
+2. Insert a node to a certain position O(n)
+    Ex: pos = 4
+
+    Node *inserted_node = new Node;
+    inserted_node->data = x;
+    ptr = first;
+    for(int i = 0; i < pos - 1; i++){
+        ptr = ptr->next;
+    }
+    inserted_node->next = ptr->next;
+    ptr->next = inserted_node;
+*/
+void insert_node(int position, int value){
+    Node *track, *ptr;
+    //Insert a node before first node
+    if(position == 0){
+        track = new Node;
+        track->data = value;
+        track->next = first;
+        first = track;
+    }
+    else if (position > 0){
+        ptr = first;
+        for (int i = 0; i < position - 1 && ptr; i++){
+            ptr = ptr->next;
+        }
+        if (ptr != NULL){
+            track = new Node;
+            track->data = value;
+            track->next = ptr->next;
+            ptr->next = track;
+        }
+    }
+}
+
 int main()
 {
     int arr[5] = {100, 50, 20, 2000, 10};
