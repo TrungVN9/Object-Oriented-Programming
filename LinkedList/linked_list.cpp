@@ -18,6 +18,7 @@ void display(struct Node *ptr)
         ptr = ptr->next;
     }
 }
+// Create Linked List based on the array
 void create_linked_list(int A[], int size)
 {
     int i;
@@ -36,6 +37,7 @@ void create_linked_list(int A[], int size)
         last = ptr;
     }
 }
+
 int count_node(struct Node *ptr)
 {
     int count = 0;
@@ -46,12 +48,28 @@ int count_node(struct Node *ptr)
     }
     return count;
 }
+int sum_nodes(struct Node *ptr)
+{
+    
+    int sum = 0;
+    while (ptr != NULL){
+        sum += ptr->data;
+        ptr = ptr->next;
+    }
+    return sum;
+}
+int max_nodes(struct Node *ptr){
+    while(ptr != NULL){
+
+    }
+}
 int main()
 {
     int arr[5] = {1, 2, 3, 4, 5};
     create_linked_list(arr, 5);
     display(first);
-    cout << count_node(first) << endl;
+    cout << "Number of Nodes: "<< count_node(first) << endl;
+    cout << "Sum: " <<sum_nodes(first) << endl;
 
     /*
         Node *node_1 = NULL;
