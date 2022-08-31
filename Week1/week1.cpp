@@ -10,6 +10,7 @@ using namespace std;
 
 Example:
 */
+
 int gcd(int a, int b)
 {
     if (a == b)
@@ -25,10 +26,27 @@ int gcd(int a, int b)
         return gcd(a, b - a);
     }
 }
+int gcd_2(int a, int b)
+{
+    if (a == b)
+    {
+        return a;
+    }
+    if (a > b)
+    {
+        a = a - b;
+    }
+    else
+    {
+        b = b - a;
+    }
+    return gcd_2(a, b);
+}
 int main()
 {
     int input_1 = 286;
     int input_2 = 1001;
     cout << "GCD between " << input_1 << " & " << input_2 << " :" << gcd(input_1, input_2) << endl;
+    cout << "GCD between " << input_1 << " & " << input_2 << " :" << gcd_2(input_1, input_2) << endl;
     return 0;
 }
