@@ -59,3 +59,71 @@ Steps:
 *** Reading Homework 1 ***
 
 1. 
+
+
+
+---------------------------------------
+***** Math 273 - Day 1 *****
+C++ Pointers
+
+Pointer:
+	+ An addresser in memory, or a variable which stores an address.
+	Example: "Hello World"
+	char *ptr = "Hello";
+	+ If T is a type, then *T is a pointer to the T
+	==> Variables of type T* store addresses of variables of type T.
+
+* Basic idea:
+	int num_1 = 10;
+	int *ptr;
+	ptr = &num_1;
+
+	cout << "Get the value of ptr: " << *ptr <<endl; // 10
+	*ptr = 30;
+	cout << "num_1 is : " << num_1 << endl; //30
+
+* C++ makes this prettier with reference variables
+Given a type T, then &T is a reference to a variable of type T.
+=> A reference is an alias (another name for a variable)
+
+*** Problem: Program needs an extra storage while running the program
+C++ operators new/delete
+
+Operator `new` returns a pointer to request (extra storage)
+
+int array[5] = {1, 2, 3, 4, 5};
+int *nums;
+nums = new int [10];
+
+In C/C++ array has a fixed size ==> Solution is using Vector class.
+
+* Pointer arithmetic:
+   *(nums + 1) = nums[1]
+
+* Memory Leak (fail to free storage):
+   - Remember to release the storage back to the operating system
+      int *ptr_array = new int [10];
+      delete []ptr_array;
+* Constructor vs Destructor:
+   - Constructor --> Automatically run when object is called
+   - Destructor --> Automatically run when object is destroyed. 
+    Example: 
+    // Constructor
+    Duck()
+    {
+        cout << "Duck.h" << endl;
+    }
+    // Deconstructor
+    ~Duck()
+    {
+        cout << "GoodBye Duck.h" << endl;
+    }
+    ==> Use `new` in Constructor and `delete` in destructor! 
+2. Smart Pointers 
+   - std::unique_ptr
+
+*** Homework Recursion ***
+1. Fib sequence: 1, 2, 3, 5, 8, 13, 21 ...
+   f_1 = 1, f_2 = 2, 
+   f_3 = f_1 + f_2
+   f_n = f_(n-1) + f_(n-2)
