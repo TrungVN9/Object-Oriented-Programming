@@ -1,25 +1,17 @@
 #include <iostream>
+
 using namespace std;
 
 class Rectangle
 {
 private:
-    int length;
-    int width;
+    int width, length;
 
 public:
-    Rectangle() { length = width = 1; }
     Rectangle(int l, int w);
+    void set_values(int width, int length);
     int area();
     int perimeter();
-    int getLength() { return length; }
-
-    // Mutator
-    void setLength(int l)
-    {
-        length = l;
-    }
-    // Destroy the object that uses dynamic allocation
     ~Rectangle();
 };
 Rectangle::Rectangle(int l, int w)
