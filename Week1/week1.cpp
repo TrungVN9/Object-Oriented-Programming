@@ -86,7 +86,7 @@ int fib_seq(int num)
 }
 string reverse_num(int num)
 {
-    if (num < 1)
+    if (num < 10)
     {
         return "";
     }
@@ -94,7 +94,7 @@ string reverse_num(int num)
 }
 int reverse_sum_num(int num)
 {
-    if (num < 1)
+    if (num < 10)
     {
         return 0;
     }
