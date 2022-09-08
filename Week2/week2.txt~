@@ -1,0 +1,38 @@
+I/ Review: Pointer and reference
+    + Homework and Exercises (Will be assigned)
+
+II/ Topics:
+    + More C++ Object-Oriented (3 - 4 weeks)
+    + Week 2:   - Templates functions and classes
+                - Recursion (more problems)
+                -> Including Algorithm and Analysis
+		- Asymptotic notation (Time complexity) Chapter 3 of the Shaffer text
+		- Linked List
+		- Stacks
+		- Queues
+		- Dictionaries (chapter 4 of the Shaffer textbook)
+		
+* Recursion: 
+    Example 1 Fib
+    - f_0 = 1, f_1 = 1;
+    if n > 1; f_n = f_(n-1) + f_(n-2)
+    Example 2: Factorial
+    - f_0 = 1, f_1 = 1;
+    - if n > 1, f_n = n * fact(n-1)
+    Example 3:
+    Memoization => To store prior computed values to be used later
+        Ex: array[10] = . . . . . . . . . .
+        - When computing an f_i for the first time, update the array.
+
+    * Recursive with more than 1 argument
+        - Indirectly Recursive (Practice this)
+	
+* Asymptotic notation: Run time of the algorithm
+* Templates: Passing data type as a parameter so that we can use various of data type for a function
+
+
+*** MATH 173 WEEK 2 - DAY 1 ***
+* Note: All code needs to be annotated
+    - Chapter 4, 5: Control statements (Looping control, if-else, if else-if)
+    - Chapter 6: functions
+    - Chapter 3: Classes
