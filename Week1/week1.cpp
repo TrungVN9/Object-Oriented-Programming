@@ -3,7 +3,8 @@
 
 using namespace std;
 
-/* Find the greatest common divisors between a and b
+/*
+Find the greatest common divisors between a and b
     (by finding the difference between two values a, b and keep subtracting it until both of them are equal)
     Step 1: if a = b, then gcd is a.
     Step 2: Replace the larger of a, b with their positive difference.
@@ -78,10 +79,6 @@ int fib_seq(int num)
     {
         return 0;
     }
-    if (num == 2)
-    {
-        return 2;
-    }
     return fib_seq(num - 1) + fib_seq(num - 2);
 }
 string reverse_num(int num)
@@ -96,7 +93,7 @@ int reverse_sum_num(int num)
 {
     if (num < 10)
     {
-        return 0;
+        return num;
     }
     return (num % 10) + reverse_sum_num(num / 10);
 }

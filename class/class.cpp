@@ -38,8 +38,42 @@ int Rectangle::perimeter()
 Rectangle::~Rectangle()
 {
 }
+
+/* Class -- polymorphism*/
+class Car
+{
+public:
+    virtual void display_car()
+    {
+        cout << "Display from car" << endl;
+    }
+};
+class Toyota : public Car
+{
+public:
+    void display_car()
+    {
+        cout << "Display car from Toyota" << endl;
+    }
+};
+class Honda : public Car
+{
+public:
+    void display_car()
+    {
+        cout << "Display from Honda" << endl;
+    }
+};
 int main()
 {
+    Car myCar;
+    Toyota myToyota;
+    Honda myHonda;
+    myCar.display_car();
+    myToyota.display_car();
+    myHonda.display_car();
+    /*
+    cout << "-----------------------" << endl;
     Rectangle rec1(10, 5);
     // rec1.initialize(10, 5);
     cout << "Area: " << rec1.area() << endl;
@@ -54,6 +88,7 @@ int main()
     Rectangle *ptr = new Rectangle();
     ptr->setLength(10);
     cout << ptr->area();
+*/
 
     return 0;
 }
