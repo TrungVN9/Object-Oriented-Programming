@@ -94,6 +94,91 @@ T maxNum(T num1, T num2)
 {
     return num1 > num2 ? num1 : num2;
 };
+
+// Stack for only integer type --> To integrate various of data types of Class Stack. We use template
+class Stack
+{
+private:
+    int *stack;
+    int top;
+    int size;
+
+public:
+    Stack(int sz)
+    {
+        size = sz;
+        top = -1;
+        stack = new int[size];
+    };
+    void push(int x);
+    int pop();
+};
+void Stack::push(int x){
+    if (top == size-1){
+        cout <<"Stack is Full! " <<endl;
+    }
+    else{
+        top++;
+        stack[top] = x;
+    }
+}
+int Stack::pop(){
+    int temp_val = 0;
+    if (top == -1){
+        cout << "Stack is Empty" <<endl;
+    }
+    else{
+        temp_val = stack[top];
+        top--;
+    }
+    return temp_val;
+}
+// Template class Stack
+template <class T>
+class Stack_temp
+{
+private:
+    T stack_temp[10];
+    int top;
+    int size;
+public:
+    Stack_temp(int sz){
+        size = sz;
+        top = -1;
+        stack_temp = new T[size];
+    };
+    void push(T x);
+    T pop();
+    bool isEmpty();
+};
+template <class T>
+void Stack_temp<T>::push(T x)
+{
+    if (top == size - 1){
+        cout << "Stack is FULL!" <<endl;
+    }
+    top++;
+    stack_temp[x];
+}
+
+template<class T>
+T Stack_temp<T>::pop(){
+    T temp_val = 0;
+    if (top == -1){
+        cout << "Stack is Empty!" <<endl;
+    }
+    temp_val = stack_temp[top];
+    top--;
+    return temp_val;
+}
+template <class T>
+bool Stack_temp<T>::isEmpty(){
+    bool status = false;
+    if (top == -1){
+        status = true;
+    }
+    return status;
+}
 int main()
 {
     // for (int index = 0; index < 5; index++)
@@ -103,8 +188,25 @@ int main()
     //     cout << fib_memo(index) << endl;
     // }
     // print_hello(10);
+
     // int max = maxNum(10, 20);
     // cout << "Max Number is: " << max << endl;
+
+    //Stack for integer type
+    // Stack s1(10);
+    // s1.push(300);
+    // s1.push(1000);
+
+    // Stack using template to store various data types
+    Stack_temp<int> stack1(5);
+    stack1.push(1.5);
+    stack1.push(2);
+    stack1.push(3.5);
+    stack1.push(4);
+    for (Stack_temp<int> temp_stack = stack1; !temp_stack.empty(); temp_stack.pop()){
+        cout << stemp_stack.top() <<endl;
+    }
+    cout << "Stack Size: " << stack1.size() <<endl;
 
     return 0;
 }

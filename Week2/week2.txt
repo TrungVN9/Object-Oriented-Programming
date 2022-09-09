@@ -28,7 +28,7 @@ II/ Topics:
         - Indirectly Recursive (Practice this)
 	
 * Asymptotic notation: Run time of the algorithm
-* Templates: Passing data type as a parameter so that we can use various of data type for a function
+* Templates: Genalize function by having ability to pass data type as a parameter so that we can use various of data type for a function
 
 
 *** MATH 173 WEEK 2 - DAY 1 ***
