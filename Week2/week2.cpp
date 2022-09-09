@@ -77,6 +77,28 @@ int fib_memo(int num)
     return fib_memo(num - 1) + fib_memo(num - 2);
 }
 
+// Compute fib memo with push back with recursive function
+int fib_memo_2(int num)
+{
+    static vector<int> memo(0, 1);
+    if (memo.size() >= (num + 1))
+    {
+        return memo[num];
+    }
+    int f_n = fib_memo_2(num - 2) + fib_memo_2(num - 1);
+    memo.push_back(f_n);
+    return f_n;
+}
+
+// Compute fib with 3 arguments
+int fib_helper(int num, int a, int b)
+{
+    if (num == 0)
+    {
+        return a;
+    }
+    return fib_helper(num - 1, b, a + b);
+}
 // Print hello with n times
 void print_hello(int num)
 {
@@ -88,6 +110,45 @@ void print_hello(int num)
     print_hello(num - 1);
 }
 
+// 20 12 | 8 12 | 8 4 | 4 4
+// Example: 20 % 12 = 8
+// 12 % 8 = 4
+// 8 % 4 = 0
+// Always modulus with the largest number and return the smallest num.
+
+// Num1 > num2
+int gcd_modulus(int num1, int num2)
+{
+    cout << "num1: " << num1 << endl;
+    cout << "num2: " << num2 << endl;
+    if (num2 == 0)
+    {
+        return num1;
+    }
+    return gcd_modulus(num2, num1 % num2);
+}
+
+// No needed
+int gcd_modulus_2(int num1, int num2)
+{
+    if (num2 == 0)
+    {
+        return num1;
+    }
+    if (num1 == 0)
+    {
+        return num2;
+    }
+    if (num1 == num2)
+    {
+        return num1;
+    }
+    if (num1 < num2)
+    {
+        return gcd_modulus_2(num2, num2 % num1);
+    }
+    return gcd_modulus_2(num2, num1 % num2);
+}
 // Templates class
 template <class T>
 T maxNum(T num1, T num2)
@@ -181,11 +242,11 @@ bool Stack_temp<T>::isEmpty(){
 }
 int main()
 {
-    // for (int index = 0; index < 5; index++)
+    // for (int index = 0; index < 10; index++)
     // {
-    //     // cout << factorial(index) << endl;
+    //     // cout << fib_memo_2(index) << endl;
     //     // cout << "-------" << endl;
-    //     cout << fib_memo(index) << endl;
+    //     cout << fib_helper(index, 0, 1) << endl;
     // }
     // print_hello(10);
 
@@ -204,9 +265,11 @@ int main()
     stack1.push(3.5);
     stack1.push(4);
     for (Stack_temp<int> temp_stack = stack1; !temp_stack.empty(); temp_stack.pop()){
-        cout << stemp_stack.top() <<endl;
+        cout << temp_stack.top() <<endl;
     }
     cout << "Stack Size: " << stack1.size() <<endl;
 
+    cout << "Method 1: " << gcd_modulus(20, 12) << endl;
+    // cout << "Method 2: " << gcd_modulus_2(50, 50) << endl;
     return 0;
 }
