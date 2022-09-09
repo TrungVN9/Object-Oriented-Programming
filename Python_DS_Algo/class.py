@@ -1,16 +1,18 @@
 class Cookie:
-    #Constructor
+    # Constructor
     def __init__(self, color):
-        #Self is a method of the class
+        # Self is a method of the class
         self.color = color
-    #Return color of the cookie  
+    # Return color of the cookie
+
     def get_color(self):
         return self.color
 
-    def set_color(self,color):
+    def set_color(self, color):
         self.color = color
-        
-# Constructor 
+
+
+# Constructor
 cookie_one = Cookie("Green")
 cookie_two = Cookie("Blue")
 
@@ -23,20 +25,23 @@ cookie_two = Cookie("Blue")
 # print("Cookie two is: ", cookie_two.get_color())
 
 # Class of Linked List
+
+
 class LinkedList:
-    #Constructor
+    # Constructor
     def __init__(self, value):
         self.value = value
     # def append(self, value):
-        
+
     # def pop(self):
-    
+
     # def prepend(self, value):
-    
+
     # def insert(self, index, value):
-        
+
     # def remove(self, index):
-    
+
+
 s = "aacc"
 t = "ccac"
 print(s.reversed())
@@ -50,20 +55,7 @@ print(hash_s)
 print(hash_t)
 
 
-
 for index in range(len(s)):
     hash_s[s[index]] = 1 + hash_s.get(s[index], 0)
     hash_t[t[index]] = 1 + hash_t.get(t[index], 0)
     print(hash_s.get(s[index]))
-
-
-        if head.next == None:
-            if head.val == 0:
-                return 0
-            else:
-                return 1
-        num = head.val
-        while head.next:
-            num = num * 2 + head.next.val
-            head = head.next
-        return num
