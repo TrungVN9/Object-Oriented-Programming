@@ -24,11 +24,67 @@ II/ Topics:
         Ex: array[10] = . . . . . . . . . .
         - When computing an f_i for the first time, update the array.
 
-    * Recursive with more than 1 argument
-        - Indirectly Recursive (Practice this)
-	
+    * Recursive with more than 1 argument (Ex: int fib_helper(int nun, int a, int b))
+        - Indirectly Recursive (because it uses a recursive function)
+
 * Asymptotic notation: Run time of the algorithm
+Problem statement 1:
+    + Determine the running time of an algorithm
+    -> Strategy:    1. Count the number of computations.
+                    Ex: gcd(m, n). Step 1: if m == n => return m. Step 2: Replace larger with the difference. Step 3: Go to Step 1.
+                    Analysis:
+                    Step 1: One comparision, one jump.
+                    Step 2: One comparison, one jump, one subtraction.
+                    Step 3: Jump.
+                    How long are these separate computations?
+                    ==> (c_1 + c_2 + c_3)k + c_1;
+                In terms of computation, linear polynomial in K. 
+    + Run time chart
+    ==> Run time of input
+    T(n)
+    T(log_10 n)
+
+    + Functions which represent running times will be assumed positive on the natural numbers (0, 1, 2, 3, 4, 5)
+    Def: Given functions f(n) and g(n) (both positive functions on the natural numbers)
+    we say f(n) is in O(g(n)).
+    + O(g(n)): if there is a number C > 0, and an integer N > 0, such that f(n) <= C. g(n) for n >= N. (remember)
+    + This means f(n) is eventually bounded by C. g(n).
+    => f(n) is "asymptotically" at most g(n).
+    Example: f(n) = n, g(n) = n^2.
+    f(n) is in O(g(n))
+    Proof: n <= n^2 and n >= 1. Use C = 1 and N = 1, n <= 1. n^2. Prove: n < 1.n^2 is true for n>= 1.
+    + In general, if f(n) <= g(n), then f(n) is in O(g(n)). 
+    Example 2: f(3n) and g(n) = n.
+    Note: f(n) >= g(n), but f(n) is in O(g(n)).
+    Proof: (Find C and N) Compare 3N to N. => Choose 3N < 4*N. 
+    ==> To show 3n <= 4n ==> for n >= 1. 
+
+    Example 3: f(n) = n^2, g(n) = n.
+    f(n) is not in O(g(n)), we need to show there is no C with n^2 <= C.n for large n. 
+    if n^2 <= C.n for n >= N. Then, n^2/n <= C.n /n => n <= C. (Not possible)
+    Note: lim(n->infinity) of n^2/ C.n = lim (n->infinity) = n/c = infinity. (1)
+    if numerator <= denomerator, then numerator/ denomerator <= 1 ==> Contrast with (1).
+
+    1. lim(n->infinity) (log n)/ n = 0 (so log_2 n is in O(n))
+        + Logarithms are asymptotically smaller than polynomial. 
+    2. lim(n->infinity) (n/ e^n) = 0 => n is in O(e^n)
+        + Polynomials are asymptotically smaller than asymptotic functions.
+    Example: 1a). lim(n-> infinity) (log n)^1000/ e^n = 0
+
+* Advice:
+1. Perform the algorithm (manually)
+2. Write down the algorithm as precisely as you can.
+3. Code it (easy)
+
 * Templates: Passing data type as a parameter so that we can use various of data type for a function
+
+**** WEEK 2 - DAY 2 MATH 273 ****
+* Fib with optimization
+    - Do the "next" function `n` times, the current `a` variable will be the `nth` fibonacci number.
+Ex: a' = b, b' = a + b.
+
+    - Define fib_helper(int num, int a, int b) // num, memoirable of computation. 
+
 
 
 *** MATH 173 WEEK 2 - DAY 1 ***
@@ -47,4 +103,4 @@ II/ Topics:
 2. #include<iomanip>
 Setw(5) built-in function => Set the number of character to be displayed.
    (Right indent of 5 characters)
-3. 
+3
