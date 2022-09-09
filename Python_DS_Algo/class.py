@@ -55,15 +55,3 @@ for index in range(len(s)):
     hash_s[s[index]] = 1 + hash_s.get(s[index], 0)
     hash_t[t[index]] = 1 + hash_t.get(t[index], 0)
     print(hash_s.get(s[index]))
-
-
-        if head.next == None:
-            if head.val == 0:
-                return 0
-            else:
-                return 1
-        num = head.val
-        while head.next:
-            num = num * 2 + head.next.val
-            head = head.next
-        return num
