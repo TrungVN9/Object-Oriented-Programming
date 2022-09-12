@@ -1,7 +1,9 @@
 #include <iostream>
-using namespace std;
+#include <vector>
 
+using namespace std;
 /* Recursion
+
 Tracing the code in a tree form.
     func1(3)
    3        func1(2)
@@ -160,7 +162,7 @@ void print_sequence(int num1, int num2)
     }
 }
 
-//Print the number threes in range num1 num2
+// Print the number threes in range num1 num2
 int num_threes_in_range(int num1, int num2)
 {
     int count = 0;
@@ -187,6 +189,46 @@ int num_threes_in_range(int num1, int num2)
     return count + num_threes_in_range(num1 + 1, num2);
 }
 
+int fib_pos_neg(int num)
+{
+    if (num == 0)
+    {
+        return 0;
+    }
+    if (num == 1)
+    {
+        return 1;
+    }
+    return fib_pos_neg(num - 1) + fib_pos_neg(num - 2);
+}
+
+// Recursive helper for adding 3 nums
+int add_3_nums(int num)
+{
+    // Create a stack_memo with the size 0 and value = 0 initializing
+    static vector<int> stack_memo(0, 0);
+
+    if (num == 0)
+    {
+        return 1;
+    }
+    if (num == 1)
+    {
+        return 2;
+    }
+    if (num == 2)
+    {
+        return 3;
+    }
+    if (stack_memo.size() >= num + 1)
+    {
+        // cout << "Stack Memo at " << num << " with stack Memo value: " << stack_memo[num] << endl;
+        return stack_memo[num];
+    }
+    int sum_3_nums = add_3_nums(num - 1) + add_3_nums(num - 2) + add_3_nums(num - 3);
+    stack_memo.push_back(sum_3_nums);
+    return sum_3_nums;
+}
 
 int main()
 {
@@ -212,7 +254,22 @@ int main()
     // }
     // print_quacks(5);
     // print_sequence(1, 5);
-    cout << num_threes_in_range(30, 40) << endl;
+    // cout << num_threes_in_range(30, 40) << endl;
+
+    // Testing vector
+    //  int SIZE = 10;
+    //  vector<int> stack_memo(SIZE, 10);
+    //  for (int i = 0; i < SIZE; i++)
+    //  {
+    //      cout << stack_memo[i] << endl;
+    //  }
+
+    // Adding 3 sums
+    // for (int index = 0; index < 5; index++)
+    // {
+    //     cout << add_3_nums(index) << endl;
+    // }
+
     return 0;
 }
 void funcB(int n)
