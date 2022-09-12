@@ -63,62 +63,157 @@ int nested_func(int n)
 {
     return n > 100 ? (n - 10) : (nested_func(nested_func(n + 11)));
 }
-int sum(int a){
-    return (a == 0) ? 0: a + sum(a - 1);
-}
 
-int func_e(int x, int n){
+int func_e(int x, int n)
+{
     static int p = 1, f = 1;
-    int r; 
-    if (n==0){return 1;}
-    r = func_e(x, n-1); 
+    int r;
+    if (n == 0)
+    {
+        return 1;
+    }
+    r = func_e(x, n - 1);
     p = p * x;
-    f = f* n;
-    return r + p/f;
+    f = f * n;
+    return r + p / f;
 }
 
-int taylor_series(int x, int num){
-    //e^x = 1 + (x/1) + (x^2/2!) + (x^3/3!) + (x^4/4!) + ... + n
-    //using common factor: 1 + (x/1)*(1 + x/2*(1+x/3))
+int taylor_series(int x, int num)
+{
+    // e^x = 1 + (x/1) + (x^2/2!) + (x^3/3!) + (x^4/4!) + ... + n
+    // using common factor: 1 + (x/1)*(1 + x/2*(1+x/3))
     int s = 1;
-    for (num; num > 0; num--){
-        s = 1 + (x/n)*s;
+    for (num = num; num > 0; num--)
+    {
+        s = 1 + (x / num) * s;
     }
     return s;
 }
-//Tower of Hanoi
-void tower_Hanoi(int num_disk, int A, int B, int C){
-    if (num_disk > 0){
+// Tower of Hanoi
+void tower_Hanoi(int num_disk, int A, int B, int C)
+{
+    if (num_disk > 0)
+    {
         tower_Hanoi(num_disk - 1, A, C, B);
-        cout << "from " << A << " to " << C <<endl;
+        cout << "from " << A << " to " << C << endl;
         tower_Hanoi(num_disk - 1, B, A, C);
     }
 }
-int taylor_series_rec(int x, int num){
+int taylor_series_rec(int x, int num)
+{
     static int s = 1;
-    if (num == 0){
+    if (num == 0)
+    {
         return s;
     }
-    s = 1 + (x/num) * s;
-    return taylor_series_rec(x, n-1);
+    s = 1 + (x / num) * s;
+    return taylor_series_rec(x, num - 1);
 }
+
+// Sum --> Return first `n` positive integers
+int sum(int num)
+{
+    return (num == 0) ? 0 : num + sum(num - 1);
+}
+
+int sum_squares(int num)
+{
+    return (num == 0) ? 0 : (num * num) + sum_squares(num - 1);
+}
+
+int sum_cubes(int num)
+{
+    return (num == 0) ? 0 : (num * num * num) + sum_cubes(num - 1);
+}
+
+void print_threes(int num)
+{
+    if (num > 0)
+    {
+        cout << num << " " << num << " " << num << endl;
+        print_threes(num - 1);
+    }
+}
+void print_quacks(int num)
+{
+    if (num > 0)
+    {
+        cout << "Quack!" << endl;
+        print_quacks(num - 1);
+    }
+}
+void print_sequence(int num1, int num2)
+{
+    if (num1 < num2)
+    {
+        cout << num1 << " ";
+        print_sequence(num1 + 1, num2);
+    }
+    if (num1 > num2)
+    {
+        cout << num1 << " ";
+        print_sequence(num1 - 1, num2);
+    }
+    if (num1 == num2)
+    {
+        cout << num1;
+    }
+}
+
+//Print the number threes in range num1 num2
+int num_threes_in_range(int num1, int num2)
+{
+    int count = 0;
+    if (num1 == num2)
+    {
+        if (num1 % 10 == 3 || num1 / 10 == 3)
+        {
+            return count + 1;
+        }
+        if (num1 % 10 == 3 and num1 / 10 == 3)
+        {
+            return count + 1;
+        }
+        return 0;
+    }
+    if (num1 % 10 == 3 || num1 / 10 == 3)
+    {
+        count += 1;
+    }
+    if (num1 % 10 == 3 and num1 / 10 == 3)
+    {
+        count += 1;
+    }
+    return count + num_threes_in_range(num1 + 1, num2);
+}
+
+
+
 int main()
 {
-    int value = 3;
-    // Print in ascending order
-    cout << "------- TAIL RECURSION -----------" << endl;
-    // Print in decreasing order
-    func1(value);
-    cout << "------- HEAD RECURSION -----------" << endl;
-    func2(value);
-    cout << "------- TREE RECURSION -----------" << endl;
-    func3_tree(value);
-    cout << "------- Indirect RECURSION -----------" << endl;
-    funcA(value);
-    cout << "------- Nested RECURSION -----------" << endl;
-    cout << nested_func(98) << endl;
-    cout << "------- Sum of N Natural Number using RECURSION -----------" << endl;
-    cout<< sum(value);
+    // int value = 3;
+    // // Print in ascending order
+    // cout << "------- TAIL RECURSION -----------" << endl;
+    // // Print in decreasing order
+    // func1(value);
+    // cout << "------- HEAD RECURSION -----------" << endl;
+    // func2(value);
+    // cout << "------- TREE RECURSION -----------" << endl;
+    // func3_tree(value);
+    // cout << "------- Indirect RECURSION -----------" << endl;
+    // funcA(value);
+    // cout << "------- Nested RECURSION -----------" << endl;
+    // cout << nested_func(98) << endl;
+    // cout << "------- Sum of N Natural Number using RECURSION -----------" << endl;
+    // cout<< sum(value);
+
+    // for (int i = 0; i < 4; i++)
+    // {
+    //     cout << sum_cubes(i) << endl;
+    // }
+    // print_quacks(5);
+    // print_sequence(1, 5);
+    cout << num_threes_in_range(30, 40) << endl;
     return 0;
 }
 void funcB(int n)
