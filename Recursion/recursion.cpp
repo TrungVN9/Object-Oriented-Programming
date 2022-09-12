@@ -188,7 +188,6 @@ int num_threes_in_range(int num1, int num2)
 }
 
 
-
 int main()
 {
     // int value = 3;
