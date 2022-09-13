@@ -1,0 +1,8 @@
+* MATH 173 - Week 3 Day 1 *
+
+1. Recall: Order of arithmetic --> PEMDAS
+
+2. Using getline(cin, name) --> To write a strong with spaces.
+   Example: string name = "";
+   	    cout << "Enter your name: ";
+	    getline(cin, name)	    cout << "Hello: " << name << " from the other side of the world" << en

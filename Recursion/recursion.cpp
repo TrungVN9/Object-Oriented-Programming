@@ -199,6 +199,10 @@ int fib_pos_neg(int num)
     {
         return 1;
     }
+    if (num < 0)
+    {
+        return fib_pos_neg(num + 1) + fib_pos_neg(num + 2);
+    }
     return fib_pos_neg(num - 1) + fib_pos_neg(num - 2);
 }
 
@@ -269,7 +273,10 @@ int main()
     // {
     //     cout << add_3_nums(index) << endl;
     // }
-
+    for (int index = 0; index <= 5; index++)
+    {
+        cout << fib_pos_neg(index) << endl;
+    }
     return 0;
 }
 void funcB(int n)
