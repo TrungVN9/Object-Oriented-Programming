@@ -175,21 +175,27 @@ public:
     void push(int x);
     int pop();
 };
-void Stack::push(int x){
-    if (top == size-1){
-        cout <<"Stack is Full! " <<endl;
+void Stack::push(int x)
+{
+    if (top == size - 1)
+    {
+        cout << "Stack is Full! " << endl;
     }
-    else{
+    else
+    {
         top++;
         stack[top] = x;
     }
 }
-int Stack::pop(){
+int Stack::pop()
+{
     int temp_val = 0;
-    if (top == -1){
-        cout << "Stack is Empty" <<endl;
+    if (top == -1)
+    {
+        cout << "Stack is Empty" << endl;
     }
-    else{
+    else
+    {
         temp_val = stack[top];
         top--;
     }
@@ -203,8 +209,10 @@ private:
     T stack_temp[10];
     int top;
     int size;
+
 public:
-    Stack_temp(int sz){
+    Stack_temp(int sz)
+    {
         size = sz;
         top = -1;
         stack_temp = new T[size];
@@ -216,27 +224,32 @@ public:
 template <class T>
 void Stack_temp<T>::push(T x)
 {
-    if (top == size - 1){
-        cout << "Stack is FULL!" <<endl;
+    if (top == size - 1)
+    {
+        cout << "Stack is FULL!" << endl;
     }
     top++;
     stack_temp[x];
 }
 
-template<class T>
-T Stack_temp<T>::pop(){
+template <class T>
+T Stack_temp<T>::pop()
+{
     T temp_val = 0;
-    if (top == -1){
-        cout << "Stack is Empty!" <<endl;
+    if (top == -1)
+    {
+        cout << "Stack is Empty!" << endl;
     }
     temp_val = stack_temp[top];
     top--;
     return temp_val;
 }
 template <class T>
-bool Stack_temp<T>::isEmpty(){
+bool Stack_temp<T>::isEmpty()
+{
     bool status = false;
-    if (top == -1){
+    if (top == -1)
+    {
         status = true;
     }
     return status;
@@ -254,10 +267,10 @@ int main()
     // int max = maxNum(10, 20);
     // cout << "Max Number is: " << max << endl;
 
-    //Stack for integer type
-    // Stack s1(10);
-    // s1.push(300);
-    // s1.push(1000);
+    // Stack for integer type
+    //  Stack s1(10);
+    //  s1.push(300);
+    //  s1.push(1000);
 
     // Stack using template to store various data types
     Stack_temp<int> stack1(5);
