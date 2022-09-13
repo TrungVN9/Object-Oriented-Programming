@@ -80,6 +80,7 @@ int fib_memo(int num)
 // Compute fib memo with push back with recursive function
 int fib_memo_2(int num)
 {
+    //Create a vector memo with size n and values 1
     static vector<int> memo(0, 1);
     if (memo.size() >= (num + 1))
     {
@@ -264,10 +265,10 @@ int main()
     stack1.push(2);
     stack1.push(3.5);
     stack1.push(4);
-    for (Stack_temp<int> temp_stack = stack1; !temp_stack.empty(); temp_stack.pop()){
-        cout << temp_stack.top() <<endl;
-    }
-    cout << "Stack Size: " << stack1.size() <<endl;
+    // for (Stack_temp<int> temp_stack = stack1; !temp_stack.empty(); temp_stack.pop()){
+    //     cout << temp_stack.top() <<endl;
+    // }
+    // cout << "Stack Size: " << stack1.size() <<endl;
 
     cout << "Method 1: " << gcd_modulus(20, 12) << endl;
     // cout << "Method 2: " << gcd_modulus_2(50, 50) << endl;
