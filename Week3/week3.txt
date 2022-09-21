@@ -9,4 +9,113 @@
 
 3. If-else statement
 
+---- Day 2 ----
+
+
+* MATH 273 - Week 3 Day 1 *
+	+ Asymptotic Notation
+	+ Templates, generic programming, library <algorithm>
+		<random> Random numbers
+		<chrono> Time
+	+ Recall:
+		- f(n) is in O(g(n)) if c > 0; N > 0 such that f(n) <= C.g(n)
+		- Techniques:
+			+ To decide if f(n) is in O(g(n)) or g(n) is in O(f(n))
+			1. if lim(n->infinity) f(n)/g(n) = 0, then f(n) is in O(g(n)) and g(n) is Omega(f(n))
+			+ Why? f(n)/ g(n) < epsilon for n>= N_epsilon.
+			==> f(n) < epsilon g(n) for n>= N_epsilon.
+			2. If lim(n->infinity) f(n) / g(n) = infinity, then g(n) is in O(f(n)) and f(n) is Omega(g(n))
+			3. If lim(n->infinity) f(n) / g(n) = C different than 0, then f(n) is in Theta(g(n)) and g(n) is in O(f(n))
+	+ Omega:
+		+ f(n) is in Omega(g(n)) if g(n) is in O(f(n))
+		=> So, f(n) is an asymptotic lower bound for g(n)
+		+ f(n) is in Omega(g(n)) means there are constant C > 0 and N > 0 such that f(n) >= C.g(n) for n>= N.
+	+ Theta:
+		+ f(n) is in Theta(g(n)) if g(n) is in Theta(g(n)) if f(n) is in Omega(g(n)) and g(n) is in O(f(n))
+
+** C++ Library <random> for generating (pseudo) randum number sequence.
+A random number sequence is a sequence of numbers where 
+	1. Next number in the sequence does not depend on prior numbers, 
+	2. The numbers are taken from a probabilty distribution. 
+
+Example:
+	1. Uniform distribution
+	2. Bell's distribution
+	3. Normal distribution: f(x) = 1/ (2pi) * e^(-x^2/2)
+
+C++ engine:
+	std:default_random_engine
+	std::random_device(hardware)
+	std::mt19937 (Mersenne twister engines)
+
+C++ distributions:
+	1. std:uniform_int_distribution<int>
+
+	#include <random>
+	int roll_a_fair_die( )
+	{
+		static std::default_random_engine e{};
+		static std::uniform_int_distribution<int> d{1, 6};
+		return d(e);
+	}
+	2. std::uniform_real_distribution<double> (float type)
+
+Recipe for generating random data
+	std::default_random_engine e;
+    std::uniform_int_distribution<int> u(10, 20);
+    for (int index = 0; index < 100; index++)
+    {
+        std::cout << u(e) << "\t";
+    }
+
+
+Ingredients to measure time:
+	1. Clock
+	2. time point
+	3. Duration
+
+clock: 			std::chrono::steady_clock
+time point: 	std::chrono::steady_clock::time_point
+
+
+TODO: 
+1. Get some random numbers in a vector ==> Vector size around 10million.
+2. Time using std::sort to sort data O(n log n)
+
+
+
+
+*** Day 2 ***
+Templates
+//Soft function 
+template <typename T>
+void swap(T &x, T &y){
+	T temp = x;
+	x = y;
+	y = temp;
+}
+
+* C++ allows template functions and classes
+ex: vector --> std::vector<int> vect;
+
+
+template <typename T>
+void bubble_sort(std::vector<T> &items)
+{
+    for (size_t index = 0; index < items.size() - 1; index++)
+    {
+        for (size_t index_j = 0; index_j < items.size() - 1; index_j)
+        {
+            if (items[index_j] > items[index_j + 1])
+            {
+                std::swap(items[index_j], items[index_j + 1]);
+            }
+        }
+    }
+}
+
+* Verifying theorical running times
+
+Suppose running time of an algorithm is T(n) = Cn^2
+
 

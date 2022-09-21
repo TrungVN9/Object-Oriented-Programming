@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <chrono>
 
 using namespace std;
 /* Recursion
@@ -132,7 +133,7 @@ void print_threes(int num)
 {
     if (num > 0)
     {
-        cout << num << " " << num << " " << num << endl;
+        cout << "Threes" << endl;
         print_threes(num - 1);
     }
 }
@@ -162,31 +163,54 @@ void print_sequence(int num1, int num2)
     }
 }
 
+//
+int check_three_helper(int num)
+{
+    if (num < 10)
+    {
+        return (num == 3 ? 1 : 0);
+    }
+    if (num % 10 == 3)
+    {
+        return 1 + check_three_helper(num / 10);
+    }
+    return check_three_helper(num / 10);
+}
 // Print the number threes in range num1 num2
 int num_threes_in_range(int num1, int num2)
 {
-    int count = 0;
+    static int count_threes = 0;
     if (num1 == num2)
     {
-        if (num1 % 10 == 3 || num1 / 10 == 3)
-        {
-            return count + 1;
-        }
-        if (num1 % 10 == 3 and num1 / 10 == 3)
-        {
-            return count + 1;
-        }
-        return 0;
+        count_threes += check_three_helper(num1);
+        return count_threes;
     }
-    if (num1 % 10 == 3 || num1 / 10 == 3)
-    {
-        count += 1;
-    }
-    if (num1 % 10 == 3 and num1 / 10 == 3)
-    {
-        count += 1;
-    }
-    return count + num_threes_in_range(num1 + 1, num2);
+    count_threes += check_three_helper(num1);
+    num_threes_in_range(num1 + 1, num2);
+    return count_threes;
+    // int count = 0;
+    // if (num1 == num2)
+    // {
+    //     if (num1 % 10 == 3 || num1 / 10 == 3)
+    //     {
+    //         return count + 1;
+    //     }
+    //     if (num1 % 10 == 3 and num1 / 10 == 3)
+    //     {
+    //         return count + 1;
+    //     }
+    //     return 0;
+    // }
+    // if (num1 % 10 == 3 || num1 / 10 == 3)
+    // {
+    //     count += 1;
+    // }
+    // if (num1 % 10 == 3 and num1 / 10 == 3)
+    // {
+    //     count += 1;
+    // }
+    // return count + num_threes_in_range(num1 + 1, num2);
+    // Check the case that bigger range
 }
 
 int fib_pos_neg(int num)
@@ -236,6 +260,7 @@ int add_3_nums(int num)
 
 int main()
 {
+    print_threes(10);
     // int value = 3;
     // // Print in ascending order
     // cout << "------- TAIL RECURSION -----------" << endl;
@@ -257,8 +282,9 @@ int main()
     //     cout << sum_cubes(i) << endl;
     // }
     // print_quacks(5);
-    // print_sequence(1, 5);
-    // cout << num_threes_in_range(30, 40) << endl;
+    // print_sequence(1, 10);
+    // cout << check_three_helper(133333) << endl;
+    // cout << num_threes_in_range(100, 300) << endl;
 
     // Testing vector
     //  int SIZE = 10;
@@ -269,14 +295,26 @@ int main()
     //  }
 
     // Adding 3 sums
-    // for (int index = 0; index < 5; index++)
+    // for (int index = 0; index < 50; index++)
     // {
     //     cout << add_3_nums(index) << endl;
     // }
-    for (int index = 0; index <= 5; index++)
-    {
-        cout << fib_pos_neg(index) << endl;
-    }
+    // auto start = std::chrono::steady_clock::now();
+    // add_3_nums(1000);
+    // auto end = std::chrono::steady_clock::now();
+    // // std::chrono::duration<double> elapsed_second = end - start;
+    // auto diff = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
+
+    // std::cout << "Difference: " << diff.count() << std::endl;
+    // for (int index = 0; index <= 5; index++)
+    // {
+    //     cout << fib_pos_neg(index) << endl;
+    // }
+    // auto start = std::chrono::steady_clock::now();
+    // cout << fib_pos_neg(50) << endl;
+    // auto end = std::chrono::steady_clock::now();
+    // std::chrono::duration<double> elapsed_second = end - start;
+    // cout << "Elapsed time: " << elapsed_second.count() << "s" << endl;
     return 0;
 }
 void funcB(int n)
