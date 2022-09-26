@@ -80,6 +80,7 @@ int fib_memo(int num)
 // Compute fib memo with push back with recursive function
 int fib_memo_2(int num)
 {
+    //Create a vector memo with size n and values 1
     static vector<int> memo(0, 1);
     if (memo.size() >= (num + 1))
     {
