@@ -32,6 +32,12 @@ bool is_divisible_by_11(int num)
         return true;
     return false;
 }
+bool max_num(int num1, int num2)
+{
+    if (num1 > num2)
+        return true;
+    return false;
+}
 int main()
 {
 
@@ -63,18 +69,32 @@ int main()
         if (is_divisible_by_5(num1))
         {
             mul *= num1;
+            cout << num1 << " is divisble by 5!!! " << endl;
         }
         else if (is_divisible_by_7(num1))
         {
             sum_seven += num1;
+            cout << num1 << " is divisble by 7!!! " << endl;
         }
         else if (is_divisible_by_11(num1))
         {
             sum_eleven += num1;
+            cout << num1 << " is divisble by 11!!! " << endl;
         }
     }
     cout << "Multiplication of numbers divisble by 5: " << mul << endl;
     cout << "Sum of numbers divisble by 7: " << sum_seven << endl;
     cout << "Sum of numbers divisble by 11: " << sum_eleven << endl;
+    cout << "Maximum or Minimum number between (" << sum_seven << ", " << sum_eleven << ") " << endl;
+
+    if (max_num(sum_seven, sum_eleven))
+    {
+        cout << "Max is: " << sum_eleven << endl;
+    }
+    else
+    {
+        cout << "Min is: " << sum_seven << endl;
+    }
+    cout << "==========================================" << endl;
     return 0;
 }
