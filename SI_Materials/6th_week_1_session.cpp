@@ -2,6 +2,23 @@
 
 using namespace std;
 
+bool is_even(int num);
+int square_nums(int num);
+bool is_divisible_by_5(int num);
+bool is_divisible_by_7(int num);
+bool is_divisible_by_11(int num);
+bool max_num(int num1, int num2);
+void display_sum_even_num();
+void week6_project();
+int main()
+{
+    cout << "==========================================" << endl;
+    display_sum_even_num();
+    cout << "==========================================" << endl;
+    week6_project();
+    return 0;
+}
+
 bool is_even(int num)
 {
     if (num % 2 == 0)
@@ -38,10 +55,19 @@ bool max_num(int num1, int num2)
         return true;
     return false;
 }
-int main()
+void display_sum_even_num()
 {
-
-    // A function that can check even and odd number
+    int sum = 0;
+    int num = 2;
+    while (num <= 20)
+    {
+        sum += num;
+        num += 2;
+    }
+    cout << sum << " is sum of even number from 2 to 20" << endl;
+}
+void week6_project()
+{
     int sum_even = 0;
     int sum_odd = 0;
     int mul = 1;
@@ -95,6 +121,4 @@ int main()
     {
         cout << "Min is: " << sum_seven << endl;
     }
-    cout << "==========================================" << endl;
-    return 0;
 }
