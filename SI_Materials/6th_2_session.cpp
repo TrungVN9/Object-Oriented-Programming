@@ -8,8 +8,8 @@ int main()
     int num1 = 10;
     int num2 = 20;
     int total_sum = 0;
-    total_sum = sum_two_nums(num1, num2);
-    cout << "sum of two int nums: " << total_sum << endl;
+    // total_sum = sum_two_nums(num1, num2);
+    cout << "sum of two int nums: " << sum_two_nums(10, 20) << endl;
     cout << "sum of two double nums: " << sum_two_nums(17.5, 20.1) << endl;
 
     return 0;
