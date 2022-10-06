@@ -11,6 +11,6 @@ int main()
     // total_sum = sum_two_nums(num1, num2);
     cout << "sum of two int nums: " << sum_two_nums(10, 20) << endl;
     cout << "sum of two double nums: " << sum_two_nums(17.5, 20.1) << endl;
-
+    
     return 0;
 }
