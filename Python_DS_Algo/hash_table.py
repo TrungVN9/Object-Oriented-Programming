@@ -45,6 +45,7 @@ def common_items(list_1, list_2):
         if num in hash_table:
             return True
     return False
+    
 my_hash_table = hash_table()
 my_hash_table.set_hash_items('bolts', 100)
 my_hash_table.set_hash_items('washer', 300)
