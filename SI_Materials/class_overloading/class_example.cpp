@@ -41,5 +41,6 @@ int main(){
     cout << "The area of Rectangle 2: " << rect2.area() << endl;
 
     //Calculate the perimeter of the rectangle
+
     return 0;
 }

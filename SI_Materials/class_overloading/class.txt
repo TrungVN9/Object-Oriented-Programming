@@ -1,0 +1,32 @@
+Agenda for today:
+
+1. Class 
+2. More Project about Class
+    + class Calculator
+3. Recursion
+
+class
+    1. what is private
+    2. What is public
+    3. How to write a function within the class
+
+
+======= TODAY TASK ========
+    1. Create a header file "sat_project_header.h"
+    2. Write a class name: Calculator
+    3. Write a constructor for the class 
+    4. Write 4 function implementation for the class.
+        + multiplication()
+        + division()
+        + subtraction()
+        + addition()
+
+===========================
+    1. Template with many different data types
+        + template<class A, class B, class C>
+=========================== 
+SI Session Schedule:
+
+    + Tuesday: 10 am - 2 pm (In Person)
+    + Thursday: 10 am - 2pm (ZOOM)
+    + Saturday: 10 am - 2pm (ZOOM)

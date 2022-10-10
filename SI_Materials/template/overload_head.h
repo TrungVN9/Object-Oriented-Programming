@@ -21,6 +21,7 @@ double max_2_nums(double num1, double num2)
     return temp_max;
 }
 
+
 template <typename T>
 T max_num(T num1, T num2)
 {

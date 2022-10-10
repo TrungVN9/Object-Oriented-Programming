@@ -1,5 +1,7 @@
 #include<iostream>
+
 #include "sat_project_header.h"
+
 using namespace std;
 
 /*
