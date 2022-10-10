@@ -11,16 +11,20 @@ class Calculator{
             num1 = a;
             num2 = b;
         }
+        void set_num1_num2(int a, int b){
+            num1 = a;
+            num2 = b;
+        }
+        float get_num1(){
+            return num1;
+        }
+        float get_num2(){
+            return num2;
+        }
         float multiplication();
         float division();
         float subtraction();
         float addition();
-        float max_num();
-        float min_num();
-        // bool is_divisible_3();
-        // bool is_divisible_5();
-        // bool is_divisible_7();
-        // bool is_disibile_11();
 };
 float Calculator::multiplication(){
     return num1 * num2;
