@@ -1,0 +1,9 @@
+class Geometry
+
+private:
+    char 
+functions members:
+    + Geometry() // all private vars are zeros
+    + Geometry(char s1, double r1)
+    + 
+
