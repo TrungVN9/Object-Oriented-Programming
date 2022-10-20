@@ -1,0 +1,8 @@
+============= SATURDAY ==============
+
+    1. Inheritance 
+    2. `protected` access specifier
+    3. Polymorphism
+        + Show an example of Polymorphism -- based on references.
+        + Practice display message from derived class
+    4. Array 

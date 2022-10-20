@@ -1,9 +1,60 @@
-class Geometry
 
+3 Parts:
+    + UML
+    + Header file
+    + Implementation
+
+UML:
+|||| class Geometry ||||||
+--------------------------
 private:
-    char 
-functions members:
-    + Geometry() // all private vars are zeros
-    + Geometry(char s1, double r1)
-    + 
+    char s;
+    double radius, length, width, height;
+public:
+    //Trung
+    + Geometry(); // all private variables must be zeros
+    + Geometry(char s, double r); //
+    + Geometry(char s, double l, double w);
+    + Geometry(char s, double l, double w, double h);
+    //Ci
+    + void set_shape(char s);
+    + void set_length(double l);
+    + void set_width (double w);
+    + void set_height (double h);
+    + char get_shape();
+    + double get_length();
+    + double get_width();
+    + double get_height();
+    
+    //Daniel
+    + double getAreaS(double a, double b);
+    + double getAreaS(double a, double b, double c);
 
+main:
+    Geometry obj1
+    Geometry obj2
+    Geometry obj3
+
+
+//Spend 5 mins to understand the problem individually
+// Group: Spend 15 - 20 to talk about the implementation
+        + 4 constructors.
+        + 5 set variables
+        + 5 get variables.
+        + getAreaS --- overloading functions
+        + Perimeter
+        + Surface
+        + Volume 
+
+//Spend most of the time on Implementation
+
+//Alejandra
+        + 4 constructors.
+        + 5 set variables
+        + 5 get variables.
+        + getAreaS --- overloading functions
+//Hao
+    + getAreaS --- overloading functions
+        + Perimeter
+        + Surface
+        + Volume 
