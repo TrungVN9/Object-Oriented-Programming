@@ -7,8 +7,6 @@ using namespace std;
 
 class StuGrade
 {
-    // A default constructor
-
 public:
     static const size_t students = 25;
     StuGrade()
@@ -104,21 +102,6 @@ private:
 int main()
 {
     StuGrade my_array;
-    // for (size_t i = 0; i < 25; i++)
-    // {
-    //     grades[i] = rand() % 100;
-    // }
-    // cout << "Unsorted the array === " << endl;
-    // for (size_t i = 0; i < 25; i++)
-    // {
-    //     cout << "Grades: " << grades[i] << "\n";
-    // }
-    // sort(grades.begin(), grades.end());
-    // cout << "SOrted the array === " << endl;
-    // for (size_t i = 0; i < 25; i++)
-    // {
-    //     cout << "Grades: " << grades[i] << "\n";
-    // }
     my_array.display();
 
     return 0;
